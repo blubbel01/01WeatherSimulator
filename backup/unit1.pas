@@ -59,14 +59,14 @@ begin
     sunImage.Hide;
     moonImage.Show;
     Form1.Color:= clWindowFrame;
-    Form1.Color:= 'Wetter Simulator - Nacht';
+    Form1.Caption:= 'Wetter Simulator - Nacht';
   end
   else
   begin
     sunImage.Show;
     moonImage.Hide;
     Form1.Color:= clActiveBorder;
-    Form1.Color:= 'Wetter Simulator - Tag';
+    Form1.Caption:= 'Wetter Simulator - Tag';
   end;
 end;
 
