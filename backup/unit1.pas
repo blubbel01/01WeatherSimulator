@@ -59,12 +59,14 @@ begin
     sunImage.Hide;
     moonImage.Show;
     Form1.Color:= clWindowFrame;
+    Form1.Color:= 'Wetter Simulator - Nacht';
   end
   else
   begin
     sunImage.Show;
     moonImage.Hide;
     Form1.Color:= clActiveBorder;
+    Form1.Color:= 'Wetter Simulator - Tag';
   end;
 end;
 
@@ -115,7 +117,7 @@ begin
       snow6Image.Hide;
     end
   else
-    begin 
+    begin
       snow1Image.Show;
       snow2Image.Show;
       snow3Image.Show;
@@ -148,4 +150,3 @@ begin
 end;
 
 end.
-
