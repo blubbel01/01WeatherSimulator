@@ -14,6 +14,7 @@ type
   TForm1 = class(TForm)
     blitz1Image: TImage;
     blitz2Image: TImage;
+    toggleBox: TCheckBox;
     daytimeButton: TButton;
     copyright: TLabel;
     rainButton: TButton;
@@ -35,8 +36,18 @@ type
     procedure FormConstrainedResize(Sender: TObject; var MinWidth, MinHeight,
       MaxWidth, MaxHeight: TConstraintSize);
     procedure rainButtonClick(Sender: TObject);
+    procedure rainButtonMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure rainButtonMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
     procedure snowButtonClick(Sender: TObject);
+    procedure snowButtonMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
     procedure thunderstormButtonClick(Sender: TObject);
+    procedure thunderstormButtonMouseDown(Sender: TObject;
+      Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure thunderstormButtonMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
 
   public
@@ -104,6 +115,32 @@ begin
     end;
 end;
 
+procedure TForm1.rainButtonMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  if toggleBox.Checked
+  then
+    begin
+      rain1Image.Show;
+      rain2Image.Show;
+      rain3Image.Show;
+      rain4Image.Show;
+    end;
+end;
+
+procedure TForm1.rainButtonMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  if toggleBox.Checked
+  then
+    begin
+      rain1Image.Hide;
+      rain2Image.Hide;
+      rain3Image.Hide;
+      rain4Image.Hide;
+    end;
+end;
+
 procedure TForm1.snowButtonClick(Sender: TObject);
 begin
   if snow1Image.Visible
@@ -117,6 +154,20 @@ begin
       snow6Image.Hide;
     end
   else
+    begin
+      snow1Image.Show;
+      snow2Image.Show;
+      snow3Image.Show;
+      snow4Image.Show;
+      snow5Image.Show;
+      snow6Image.Show;
+    end;
+end;
+
+procedure TForm1.snowButtonMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  if toggleBox.Checked then
     begin
       snow1Image.Show;
       snow2Image.Show;
@@ -146,6 +197,34 @@ begin
       rain4Image.Show;
       blitz1Image.Show;
       blitz2Image.Show;
+    end;
+end;
+
+procedure TForm1.thunderstormButtonMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  if toggleBox.Checked then
+    begin
+      rain1Image.Show;
+      rain2Image.Show;
+      rain3Image.Show;
+      rain4Image.Show;
+      blitz1Image.Show;
+      blitz2Image.Show;
+    end;
+end;
+
+procedure TForm1.thunderstormButtonMouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  if toggleBox.Checked then
+    begin
+      rain1Image.Hide;
+      rain2Image.Hide;
+      rain3Image.Hide;
+      rain4Image.Hide;
+      blitz1Image.Hide;
+      blitz2Image.Hide;
     end;
 end;
 
