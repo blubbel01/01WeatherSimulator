@@ -43,6 +43,8 @@ type
     procedure snowButtonClick(Sender: TObject);
     procedure snowButtonMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
+    procedure snowButtonMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
     procedure thunderstormButtonClick(Sender: TObject);
     procedure thunderstormButtonMouseDown(Sender: TObject;
       Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
@@ -175,6 +177,20 @@ begin
       snow4Image.Show;
       snow5Image.Show;
       snow6Image.Show;
+    end;
+end;
+
+procedure TForm1.snowButtonMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  if toggleBox.Checked then
+    begin
+      snow1Image.Hide;
+      snow2Image.Hide;
+      snow3Image.Hide;
+      snow4Image.Hide;
+      snow5Image.Hide;
+      snow6Image.Hide;
     end;
 end;
 

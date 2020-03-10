@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 459
+  Left = 653
   Height = 429
-  Top = 280
+  Top = 282
   Width = 748
   Caption = 'Wetter Simulator - Tag'
   ClientHeight = 429
@@ -1044,6 +1044,7 @@ object Form1: TForm1
     Caption = 'Schnee'
     OnClick = snowButtonClick
     OnMouseDown = snowButtonMouseDown
+    OnMouseUp = snowButtonMouseUp
     TabOrder = 3
   end
   object copyright: TLabel

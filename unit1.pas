@@ -14,6 +14,9 @@ type
   TForm1 = class(TForm)
     blitz1Image: TImage;
     blitz2Image: TImage;
+    wolke1Image: TImage;
+    wolke2Image: TImage;
+    wolke3Image: TImage;
     toggleBox: TCheckBox;
     daytimeButton: TButton;
     copyright: TLabel;
